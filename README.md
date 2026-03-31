@@ -19,10 +19,11 @@ The implementation uses TF-IDF and cosine similarity to make the workflow transp
 
 ## Features
 
-- **Document ingestion** — loads and processes text files from `data/documents/`  
-- **Vector store** — builds a TF-IDF matrix for document representation  
-- **Retrieval engine** — performs similarity search using cosine similarity  
-- **Query handling** — returns top matching documents with relevance scores  
+- Ingests and indexes document corpus using TF-IDF vectorisation
+- Performs cosine similarity search across indexed documents
+- Returns ranked results with similarity scoring for each query
+- Achieves sub-second query response time on small to medium document sets
+- Demonstrates retrieval pipeline structure used in production RAG systems 
 
 ---
 
