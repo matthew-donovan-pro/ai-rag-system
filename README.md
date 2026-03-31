@@ -1,31 +1,35 @@
 # AI Document Analysis System (RAG)
 
-This repository demonstrates a simple retrieval‑augmented generation (RAG) system.  It reads a small corpus of text files, builds an in‑memory vector store using TF‑IDF and cosine similarity, and returns the most relevant documents for a given query.
+**Retrieval-augmented document analysis demo using indexing, similarity search, and structured retrieval workflows.**
 
-**Important**: This is a demonstration only.  It uses simplified logic and a tiny corpus.  Production RAG systems use more sophisticated embedding models, chunking strategies and back‑end storage.
+---
+
+## Overview
+
+This project demonstrates the core architecture of a retrieval-augmented generation (RAG) system for document analysis.
+
+It shows:
+- document ingestion and indexing  
+- vector-based similarity search  
+- retrieval of relevant content for a given query  
+
+The implementation uses TF-IDF and cosine similarity to make the workflow transparent. In production, this would be replaced with embedding models, chunking strategies, and scalable vector storage.
+
+---
 
 ## Features
 
-- **Document ingestion** – load plain‑text files from `data/documents/`.
-- **Vector store** – build a term frequency matrix and compute cosine similarity.
-- **Retrieval** – find the top matching documents for a given query.
+- **Document ingestion** — loads and processes text files from `data/documents/`  
+- **Vector store** — builds a TF-IDF matrix for document representation  
+- **Retrieval engine** — performs similarity search using cosine similarity  
+- **Query handling** — returns top matching documents with relevance scores  
 
-## Quick start
+---
 
-1. Install dependencies (only standard library required in this demo):
+## Demo
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+Run:
 
-2. Run the demo script:
-
-   ```bash
-   python demo/run_rag_demo.py --query "example search"
-   ```
-
-   The script prints the top matching documents and their similarity scores.
-
-## Notes on IP
-
-This demonstration is intentionally simple and uses trivial TF‑IDF logic.  Production systems typically employ transformer embeddings, chunking and external vector databases.
+```bash
+pip install -r requirements.txt
+python demo/run_rag_demo.py --query "example search"
