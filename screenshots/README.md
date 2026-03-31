@@ -1,0 +1,1 @@
+Placeholder for screenshots of the RAG demo.  You can capture terminal output or UI images and save them here.

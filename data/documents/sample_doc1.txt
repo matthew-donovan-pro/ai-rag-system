@@ -1,0 +1,2 @@
+This is the first sample document. It talks about artificial intelligence and machine learning.
+It covers the basics of neural networks and training data.

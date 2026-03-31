@@ -1,0 +1,4 @@
+# Demo requirements for AI RAG system
+# Uses only Python standard library and numpy for basic vector math
+numpy
+scikit-learn

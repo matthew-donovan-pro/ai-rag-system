@@ -1,0 +1,2 @@
+This document is about compliance automation. It describes how rules engines work and the importance of audit trails.
+It also mentions machine learning briefly.
