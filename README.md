@@ -1,69 +1,73 @@
-## Overall Verdict
-**FAIL** - This README is too thin and generic for senior applied AI roles. It reads like a basic academic exercise rather than a production system demonstration.
+# AI Document Retrieval System (RAG)
 
-## Strengths
-- Clean, professional structure
-- Appropriate enterprise terminology
-- Mentions production-ready concepts
-- Integration notes show awareness of real-world deployment
+This repository demonstrates a simplified retrieval-augmented generation (RAG) system designed to illustrate how document search and semantic retrieval pipelines operate in applied AI systems.
 
-## Critical Weaknesses
+The implementation uses lightweight techniques (TF-IDF and cosine similarity) to clearly expose the core mechanics behind retrieval systems without relying on external APIs or large-scale infrastructure.
 
-### 1. **Lacks Technical Depth**
-No mention of specific technologies, frameworks, or architectural decisions that demonstrate expertise.
+---
 
-### 2. **Generic Feature Claims**
-"Multi-format document ingestion" and "configurable embedding strategies" are buzzwords without substance.
+## Overview
 
-### 3. **Missing Implementation Details**
-No indication of what similarity algorithms, chunking strategies, or preprocessing methods are actually implemented.
+The system ingests a small corpus of documents, builds a vector representation, and retrieves the most relevant documents for a given query.
 
-### 4. **Weak Demo Section**
-Single command with no context about what it demonstrates or expected outcomes.
+It demonstrates the fundamental stages of a RAG pipeline:
 
-### 5. **Vague Architecture Description**
-Lists concepts without explaining design decisions or trade-offs.
+- document ingestion  
+- text vectorisation  
+- similarity-based retrieval  
+- ranked result output  
 
-## Exact Rewrite Suggestions
+This is a **structural demonstration of RAG**, not a production implementation.
 
-**Replace the opening paragraph:**
-```
-Enterprise-grade RAG system implementing semantic document retrieval with configurable embedding pipelines. Built with FastAPI, supports multiple vector stores (Chroma, Pinecone), and includes production monitoring. Processes 10K+ documents with sub-200ms query response times.
-```
+---
 
-**Replace Core Capabilities section:**
-```
 ## System Components
 
-- **Document Pipeline** - Handles PDF/DOCX/TXT with LangChain text splitters, metadata extraction, and batch processing
-- **Embedding Layer** - OpenAI Ada-002 and Sentence-Transformers with fallback strategies
-- **Vector Store** - Chroma DB with similarity search and metadata filtering
-- **Query Engine** - Semantic search with re-ranking and confidence thresholding
-- **API Layer** - FastAPI with async processing and rate limiting
-```
+- **Document Pipeline**  
+  Loads and preprocesses plain-text documents from a local corpus
 
-**Replace Technical Architecture:**
-```
+- **Vectorisation Layer**  
+  TF-IDF transformation of document text into vector space representations
+
+- **Similarity Engine**  
+  Cosine similarity used to compare query vectors against document vectors
+
+- **Retrieval Layer**  
+  Returns ranked documents based on similarity scores
+
+- **Query Interface**  
+  Command-line interface for executing search queries
+
+---
+
 ## Architecture
 
-- **Ingestion**: Async document processing with Redis queue management
-- **Storage**: Vector embeddings in Chroma with PostgreSQL metadata store  
-- **Retrieval**: Hybrid search combining semantic similarity and keyword matching
-- **API**: RESTful endpoints with OpenAPI documentation and health checks
-```
+The system follows a simplified retrieval pipeline:
 
-## Acceptable Not-Yet-Done Items
-- Screenshots/demos (Phase 6)
-- Portfolio site integration (Phase 9)
+1. Document ingestion from local files  
+2. Text preprocessing and tokenisation  
+3. TF-IDF vector generation  
+4. Query vector transformation  
+5. Cosine similarity scoring  
+6. Ranked document retrieval  
 
-## Later-Stage Improvements
-- Performance benchmarks
-- Deployment configurations
-- Cost analysis
+This structure mirrors production RAG systems where TF-IDF would typically be replaced with embedding models and vector databases.
 
-## Score: 25/100
+---
 
-## Final Judgement
-**Not hireable at current stage.** The README demonstrates awareness of RAG concepts but lacks the technical specificity and implementation details expected for senior roles. Needs substantial technical depth before being credible for applied AI positions.
+## Features
 
-**Priority fix:** Add specific technologies, performance metrics, and concrete implementation details to demonstrate actual system-building capability rather than conceptual knowledge.
+- Document ingestion from local corpus  
+- Vectorisation using TF-IDF  
+- Similarity search using cosine distance  
+- Ranked retrieval with similarity scoring  
+- Clear separation of ingestion, indexing, and retrieval stages  
+
+---
+
+## Quick Start
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
